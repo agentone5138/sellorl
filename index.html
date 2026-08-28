@@ -217,13 +217,15 @@
 
   .seal{
     position:absolute;
-    top:60px; right:24px;
-    width:104px; height:104px;
+    top:-18px; right:-14px;
+    width:92px; height:92px;
     border-radius:50%;
     border:1.5px dashed var(--gold);
+    background:var(--paper);
     display:flex; align-items:center; justify-content:center;
     text-align:center;
     transform:rotate(8deg);
+    z-index:1;
   }
   .seal .inner{
     width:84px; height:84px;
@@ -259,6 +261,8 @@
   }
   .quote-card h3{ font-size:19px; }
   .field{ margin-top:16px; }
+  .field-row{ display:grid; grid-template-columns:1.4fr 1fr; gap:12px; }
+  .field-row .field{ margin-top:16px; }
   .field label{
     display:block;
     font-family:"Inter", sans-serif;
@@ -610,9 +614,15 @@
             <span class="doc-no mono">FORM&nbsp;NO.&nbsp;01-CO</span>
           </div>
           <form id="offer-form">
-            <div class="field">
-              <label for="address">Property address</label>
-              <input id="address" name="Property Address" type="text" placeholder="123 Palmetto Ave, Orlando, FL" required>
+            <div class="field-row">
+              <div class="field">
+                <label for="address">Property address</label>
+                <input id="address" name="Property Address" type="text" placeholder="123 Palmetto Ave" required>
+              </div>
+              <div class="field">
+                <label for="city">City</label>
+                <input id="city" name="City" type="text" placeholder="Orlando" required>
+              </div>
             </div>
             <div class="field">
               <label for="situation">Best describes your situation</label>
@@ -624,6 +634,16 @@
                 <option>Needs major repairs</option>
                 <option>Relocating</option>
                 <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="timeline">Timeline of how soon would you like to sell?</label>
+              <select id="timeline" name="Timeline">
+                <option>ASAP</option>
+                <option>Within 30 days</option>
+                <option>Within 90 days</option>
+                <option>Within 6 months</option>
+                <option>6 months or more</option>
               </select>
             </div>
             <div class="field">
@@ -858,9 +878,25 @@
           <span class="doc-no mono">FORM&nbsp;NO.&nbsp;01-CO</span>
         </div>
         <form id="offer-form-2">
+          <div class="field-row">
+            <div class="field">
+              <label for="address2">Property address</label>
+              <input id="address2" name="Property Address" type="text" placeholder="123 Palmetto Ave" required>
+            </div>
+            <div class="field">
+              <label for="city2">City</label>
+              <input id="city2" name="City" type="text" placeholder="Orlando" required>
+            </div>
+          </div>
           <div class="field">
-            <label for="address2">Property address</label>
-            <input id="address2" name="Property Address" type="text" placeholder="123 Palmetto Ave, Orlando, FL" required>
+            <label for="timeline2">Timeline of how soon would you like to sell?</label>
+            <select id="timeline2" name="Timeline">
+              <option>ASAP</option>
+              <option>Within 30 days</option>
+              <option>Within 90 days</option>
+              <option>Within 6 months</option>
+              <option>6 months or more</option>
+            </select>
           </div>
           <div class="field">
             <label for="phone2">Phone number</label>
@@ -911,7 +947,6 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 Florida Cash Offers. All rights reserved.</span>
-      <span>Licensed Florida real estate purchaser — License #FL-000000 (placeholder)</span>
     </div>
   </div>
 </footer>
